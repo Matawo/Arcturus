@@ -16,6 +16,8 @@ public class Test {
         }
         Creature p1 = new Creature();
         p1.setName("Goblin");
-        SaverXML.serializeCreature(p1);
+        SaverXML.save(p1);
+        Creature p2 = SaverXML.load("Saves/Goblin0");
+        System.out.println(p2.getId());
     }
 }
