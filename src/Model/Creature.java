@@ -1,9 +1,10 @@
 package Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Creature {
+public class Creature implements Serializable {
     private static int current_id;
     private int id;
     private String name;
@@ -70,7 +71,7 @@ public class Creature {
     private int[] stats = new int[6];
     private int[] savingThrow = new int[6];
 
-    private Creature() {
+    public Creature() {
         id = current_id;
         current_id++;
     }
