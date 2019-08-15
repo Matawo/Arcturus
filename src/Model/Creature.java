@@ -65,15 +65,16 @@ public class Creature implements Serializable {
         this.savingThrow = savingThrow;
     }
 
+    private Dices HitDices;
     private int maxHitPoint;
     private int speed;
     private int armorClass;
     private int[] stats = new int[6];
     private int[] savingThrow = new int[6];
+    private ArrayList<Weapon> weapons;
 
     public Creature() {
         id = current_id;
         current_id++;
     }
-
 }
