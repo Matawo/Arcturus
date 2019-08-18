@@ -1,16 +1,20 @@
 package Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
 
-public class Dices {
-    private ArrayList<Dice> dicelist = new ArrayList<>();
+public class Dices implements Serializable {
+    private Set<Dice> dicelist = new HashSet<>();
     private int modifier;
 
-    public ArrayList<Dice> getDicelist() {
+    public Set<Dice> getDicelist() {
         return dicelist;
     }
 
-    public void setDicelist(ArrayList<Dice> dicelist) {
+    public void setDicelist(Set<Dice> dicelist) {
         this.dicelist = dicelist;
     }
 
@@ -24,5 +28,9 @@ public class Dices {
 
     public int roll() {
         return dicelist.stream().reduce(0, (result,dice) -> dice.roll() + result, Integer::sum) + modifier;
+    }
+
+    public int critical() {
+        return dicelist.stream().reduce(0, (result,dice) -> dice.crit() + result, Integer::sum) + modifier;
     }
 }

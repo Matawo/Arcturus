@@ -7,6 +7,11 @@ public class Cell {
     public int y;
     public EntityInBattle entity;
 
+    public Cell(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
     public int getDistance(Cell otherCell) {
         int dx = Math.abs(x-otherCell.x);
         int dy = Math.abs(y-otherCell.y);
